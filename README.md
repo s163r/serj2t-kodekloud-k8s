@@ -2,8 +2,10 @@
 
 
 
-Используемые команды
+### Используемые команды
+```sh
 k create cm nginx-config --from-file=nginx.conf
-k create cm nginx-config --from-file=nginx.conf
-k cp /opt/index.php nginx-phpfpm:/usr/share/nginx -c nginx-container
+k apply -f 1.yaml
 k expose pod nginx-phpfpm --name=nginx-phpfpm-svc --type=NodePort
+k cp /opt/index.php nginx-phpfpm:/var/www/html -c nginx-container
+```
